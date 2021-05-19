@@ -50,10 +50,15 @@ class Square:
     def my_print(self):
         """Print square."""
         for i in range(self.__size):
+            [print(" ", end="") for k in range(self.__position[0])]
             [print("#", end="") for j in range(self.__size)]
+
+        for h in range(self.__position[1]):
             print("")
+
         if self.__size == 0:
             print("")
+            return
 
     @property
     def position(self):
@@ -75,5 +80,4 @@ class Square:
            type(value[0]) is not int or value[0] < 0 or \
            type(value[1]) is not int or value[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
-        else:
-            self.__position = value
+        self.__position = value
