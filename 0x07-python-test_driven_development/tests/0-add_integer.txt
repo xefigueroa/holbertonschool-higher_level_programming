@@ -65,3 +65,17 @@ Because ``+`` is also defined on data types other than numbers,
 	Traceback (most recent call last):
 		...
 	TypeError: a must be an integer
+
+::
+
+	>>> add_integer(4, float('inf'))
+	Traceback (most recent call last):
+		...
+	OverflowError: cannot convert float infinity to integer
+
+::
+
+	>>> add_integer(98, float('nan'))
+	Traceback (most recent call last):
+		...
+	ValueError: cannot convert float NaN to integer

@@ -22,7 +22,7 @@ Import function from module:
 ::
 
 	>>> say_my_name("Bob")
-	My name is Bob
+	My name is Bob 
 
 ::
 
