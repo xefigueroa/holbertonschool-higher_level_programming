@@ -7,7 +7,7 @@
 ::
 
 Import function from module:
-	say_my_name = __import__('3-say_my_name').say_my_name
+	>>> say_my_name = __import__('3-say_my_name').say_my_name
 
 ::
 
@@ -36,4 +36,4 @@ Import function from module:
 	>>> say_my_name("Peter", 37)
 	Traceback (most recent call last):
 		...
-	TypeError: first_name must be a string
+	TypeError: last_name must be a string
