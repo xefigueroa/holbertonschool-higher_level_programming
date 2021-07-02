@@ -1,0 +1,114 @@
+tests 7-base_geometry
+============================
+
+Import module:
+	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+::
+
+	>>> base_g = BaseGeometry()
+
+	>>> type(base_g) == BaseGeometry
+	True
+
+area()
+============================
+
+	>>> type(BaseGeometry.__dict__['area'])
+	<class 'function'>
+
+::
+
+	>>> base_g.__class__.area()
+	Traceback (most recent call last):
+	TypeError: area() missing 1 required positional argument: 'self'
+
+::
+
+	>>> base_g.area()
+	Traceback (most recent call last):
+	Exception: area() is not implemented
+
+integer_validator()
+============================
+
+	>>> type(BaseGeometry.__dict__['integer_validator'])
+	<class 'function'>
+
+::
+
+	>>> base_g.__class__.integer_validator()
+	Traceback (most recent call last):
+	TypeError: integer_validator() missing 3 required positional arguments: 'self', 'name', and 'value'
+
+::
+
+	>>> base_g.integer_validator()
+	Traceback (most recent call last):
+	TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+::
+
+	>>> base_g.integer_validator(1, 1, 1)
+	Traceback (most recent call last):
+	TypeError: integer_validator() takes 3 positional arguments but 4 were given
+
+::
+
+	>>> base_g.integer_validator("foo", 3.0)
+	Traceback (most recent call last):
+	TypeError: foo must be an integer
+
+::
+
+	>>> base_g.integer_validator("arg", 3.14)
+	Traceback (most recent call last):
+	TypeError: arg must be an integer
+
+::
+
+	>>> base_g.integer_validator("Meh", "bar")
+	Traceback (most recent call last):
+	TypeError: Meh must be an integer
+
+::
+
+	>>> base_g.integer_validator("woo", True)
+	Traceback (most recent call last):
+	TypeError: woo must be an integer
+
+::
+
+	>>> base_g.integer_validator("a", [1])
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+
+::
+
+	>>> base_g.integer_validator("foo", None)
+	Traceback (most recent call last):
+	TypeError: foo must be an integer
+
+::
+
+	>>> base_g.integer_validator("key", 0)
+	Traceback (most recent call last):
+	ValueError: key must be greater than 0
+
+::
+
+	>>> base_g.integer_validator("key", -1000)
+	Traceback (most recent call last):
+	ValueError: key must be greater than 0
+
+::
+
+	>>> base_g.integer_validator("Meh", (1, 2))
+	Traceback (most recent call last):
+	TypeError: Meh must be an integer
+
+::
+
+	>>> base_g.integer_validator("Meh", {1, 2})
+	Traceback (most recent call last):
+	TypeError: Meh must be an integer
