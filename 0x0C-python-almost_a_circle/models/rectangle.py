@@ -87,3 +87,45 @@ class Rectangle(Base):
     def area(self):
         """Area of Rectangle."""
         return self.width * self.height
+
+    def display(self):
+        """Prints rectangle representation with #"""
+        for y in range(self.y):
+            print()
+        for h in range(self.height):
+            for x in range(self.x):
+                    print(" ", end="")
+            for w in range(self.width):
+                print("#", end="")
+            print()
+
+    def __str__(self):
+        """returns [Rectangle] (<id>) <x>/<y> - <width>/<height>"""
+        ret = "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}"
+        return ret.format(self.id, self.x, self.y, self.width, self.height)
+
+    def update(self, *args, **kwargs):
+        """updates multiple attributes"""
+        if len(args):
+            for i, a in enumerate(args):
+                if i == 0:
+                    self.id = a
+                elif i == 1:
+                    self.width = a
+                elif i == 2:
+                    self.height = a
+                elif i == 3:
+                    self.x = a
+                elif i == 4:
+                    self.y = a
+        else:
+            if "id" in kwargs:
+                self.id = kwargs["id"]
+            if "width" in kwargs:
+                self.width = kwargs["width"]
+            if "height" in kwargs:
+                self.height = kwargs["height"]
+            if "x" in kwargs:
+                self.x = kwargs["x"]
+            if "y" in kwargs:
+                self.y = kwargs["y"]
