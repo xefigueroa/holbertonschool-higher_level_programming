@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Module lists all states with a name starting with N """
+''' Module lists all states with a name starting with N '''
 import MySQLdb
 import sys
 
