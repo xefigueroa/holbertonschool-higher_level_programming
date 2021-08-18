@@ -6,7 +6,7 @@ import MySQLdb
 
 if __name__ == "__main__":
     cnx = MySQLdb.connect(host="localhost", port=3306, user=sys.argv[1],
-                          psswd=sys.argv[2], db=sys.argv[3])
+                          psswd=sys.argv[2], db=sys.argv[3], charset="utf8")
     c = cnx.cursor()
     c.execute("SELECT * FROM states ORDER BY id ASC")
     query_rows = c.fetchall()
