@@ -18,8 +18,7 @@ if __name__ == "__main__":
     # fetch remaining rows after script executed
     query_rows = c.fetchall()
     # printing query
-    for row in query_rows:
-        print(row)
+    print(", ".join(row[0] for row in query_rows))
     # close cursor and connection
     c.close()
     cnx.close()
