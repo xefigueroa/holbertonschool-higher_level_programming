@@ -14,10 +14,9 @@ if __name__ == "__main__":
     c = cnx.cursor()
 
     # execution of SQL query script
-    c.execute("SELECT * FROM states
-              WHERE name='{}'
-              ORDER BY states.id ASC"
-              .format(argv[4]))
+    c.execute("SELECT * FROM states\
+              WHERE name='{}'\
+              ORDER BY states.id ASC".format(argv[4]))
 
     # fetch remaining rows after script executed
     query_rows = c.fetchall()
