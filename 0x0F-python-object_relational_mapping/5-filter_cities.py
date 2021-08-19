@@ -14,7 +14,7 @@ if __name__ == "__main__":
     c.execute("SELECT cities.name FROM cities\
               JOIN states ON cities.state_id = states.id\
               WHERE states.name = %s\
-              ORDER BY cities.id", (sys.argv[4],))
+              ORDER BY cities.id ASC", (sys.argv[4],))
     # fetch remaining rows after script executed
     query_rows = c.fetchall()
     # printing query
