@@ -14,8 +14,8 @@ if __name__ == "__main__":
     c = conn.cursor()
 
     # execution of SQL query script
-    c.execute("SELECT * FROM states\
-              WHERE name LIKE BINARY '{}'\
+    c.execute("SELECT * FROM states \
+              WHERE name LIKE BINARY '{}' \
               ORDER BY states.id ASC".format(argv[4]))
 
     # fetch remaining rows after script executed

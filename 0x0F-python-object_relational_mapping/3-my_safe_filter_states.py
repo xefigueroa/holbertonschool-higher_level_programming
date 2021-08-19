@@ -14,7 +14,7 @@ if __name__ == "__main__":
     c = conn.cursor()
 
     # execution of SQL query script
-    c.execute("SELECT * FROM states\
+    c.execute("SELECT * FROM states \
               WHERE name = %s ORDER BY states.id ASC", (sys.argv[4], ))
 
     # fetch remaining rows after script executed
