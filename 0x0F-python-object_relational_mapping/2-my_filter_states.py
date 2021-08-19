@@ -15,8 +15,8 @@ if __name__ == "__main__":
 
     # execution of SQL query script
     cur.execute("SELECT * FROM states \
-              WHERE name LIKE BINARY '{}' \
-              ORDER BY states.id ASC".format(argv[4]))
+            WHERE name LIKE BINARY '{}' \
+            ORDER BY states.id ASC".format(sys.argv[4]))
 
     # fetch remaining rows after script executed
     query_rows = cur.fetchall()
