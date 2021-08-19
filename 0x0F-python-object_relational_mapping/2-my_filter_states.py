@@ -15,7 +15,7 @@ if __name__ == "__main__":
 
     # execution of SQL query script
     c.execute("SELECT * FROM states\
-              WHERE name='{}'\
+              WHERE name LIKE BINARY '{}'\
               ORDER BY states.id".format(argv[4]))
 
     # fetch remaining rows after script executed

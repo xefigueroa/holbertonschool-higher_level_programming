@@ -15,7 +15,7 @@ if __name__ == "__main__":
 
     # execution of SQL query script
     c.execute("SELECT * FROM states\
-              WHERE name=%s ORDER BY states.id ASC", (sys.argv[4],))
+              WHERE name = %s ORDER BY states.id ASC", (sys.argv[4], ))
 
     # fetch remaining rows after script executed
     query_rows = c.fetchall()

@@ -16,7 +16,7 @@ if __name__ == "__main__":
     # execution of SQL query script
     c.execute("SELECT cities.id, cities.name, states.name\
               FROM cities JOIN states\
-              WHERE cities.state_id=states.id\
+              WHERE cities.state_id = states.id\
               ORDER BY cities.id")
 
     # fetch remaining rows after script executed
