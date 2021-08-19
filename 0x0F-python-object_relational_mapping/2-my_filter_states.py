@@ -11,20 +11,20 @@ if __name__ == "__main__":
                            psswd=sys.argv[2], db=sys.argv[3])
 
     # cursor object creation
-    c = conn.cursor()
+    cur = conn.cursor()
 
     # execution of SQL query script
-    c.execute("SELECT * FROM states \
+    cur.execute("SELECT * FROM states \
               WHERE name LIKE BINARY '{}' \
               ORDER BY states.id ASC".format(argv[4]))
 
     # fetch remaining rows after script executed
-    query_rows = c.fetchall()
+    query_rows = cur.fetchall()
 
     # printing query
     for row in query_rows:
         print(row)
 
     # close cursor and connection
-    c.close()
+    cur.close()
     conn.close()
