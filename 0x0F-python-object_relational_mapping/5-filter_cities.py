@@ -6,10 +6,10 @@ import sys
 
 if __name__ == "__main__":
     # connection
-    cnx = MySQLdb.connect(host="localhost", port=3306, user=sys.argv[1],
+    conn = MySQLdb.connect(host="localhost", port=3306, user=sys.argv[1],
                           psswd=sys.argv[2], db=sys.argv[3])
     # cursor object creation
-    c = cnx.cursor()
+    c = conn.cursor()
     # execution of SQL query script
     c.execute("SELECT cities.name FROM cities\
               JOIN states ON cities.state_id=states.id\
@@ -21,4 +21,4 @@ if __name__ == "__main__":
     print(", ".join(row[0] for row in query_rows))
     # close cursor and connection
     c.close()
-    cnx.close()
+    conn.close()

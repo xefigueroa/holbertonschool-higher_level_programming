@@ -7,11 +7,11 @@ import sys
 
 if __name__ == "__main__":
     # connection
-    cnx = MySQLdb.connect(host="localhost", port=3306, user=sys.argv[1],
+    conn = MySQLdb.connect(host="localhost", port=3306, user=sys.argv[1],
                           psswd=sys.argv[2], db=sys.argv[3])
 
     # cursor object creation
-    c = cnx.cursor()
+    c = conn.cursor()
 
     # execution of SQL query script
     c.execute("SELECT cities.id, cities.name, states.name\
@@ -28,4 +28,4 @@ if __name__ == "__main__":
 
     # close cursor and connection
     c.close()
-    cnx.close()
+    conn.close()
