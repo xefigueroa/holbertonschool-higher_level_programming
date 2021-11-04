@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 """takes URL/email, sends POST req to passed URL w/ email as param, displays response."""
 import requests
-from sys import argv
+import sys
 
 
 if __name__ == '__main__':
-    v = {'email': argv[2]}
-    r = requests.post(argv[1], data=v)
-    print(r.text)
+    url = sys.argv[1]
+    email = {'email': sys.argv[2]}
+    print(requests.post(url, data=email).text)

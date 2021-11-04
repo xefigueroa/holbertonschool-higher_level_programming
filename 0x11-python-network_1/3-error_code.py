@@ -2,11 +2,12 @@
 """takes URL, sends request to URL and displays the response"""
 import urllib.error as error
 import urllib.request as request
-from sys import argv
+import sys
 
 
 if __name__ == "__main__":
-    req = request.Request(argv[1])
+    url = sys.argv[1]
+    req = request.Request(url)
     try:
         with request.urlopen(req) as r:
             print(r.read().decode('utf-8'))
