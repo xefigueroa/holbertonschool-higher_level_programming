@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""takes URL, sends request to URL and displays value of variable X-Request-Id"""
+"""takes URL, sends request and displays value of variable X-Request-Id"""
 import requests as r
 import sys
 

@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""takes URL/email, sends POST req to passed URL w/ email as param, displays response."""
+"""takes URL/email, send POST req to pass URL w/ email as param"""
 import requests
 import sys
 
